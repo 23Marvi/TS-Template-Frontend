@@ -12,11 +12,8 @@ import { IJwtDecoded } from "src/app/interfaces/jwt-decoded.interface";
 
 export class UserStateFacade {
 
-    @Select(UserState.accessToken)
-        accessToken$: Observable<string>;
-
-    @Select(UserState.jwtDecoded)
-        jwtDecoded$: Observable<IJwtDecoded>;
+    @Select(UserState.accessToken) accessToken$: Observable<string>;
+    @Select(UserState.jwtDecoded) jwtDecoded$: Observable<IJwtDecoded>;
 
     constructor(private store: Store) { }
 

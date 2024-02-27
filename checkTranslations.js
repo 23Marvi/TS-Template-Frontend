@@ -34,8 +34,6 @@ if (missing_keys.length > 0) {
     exitcode = 1;
 }
 
-
-
 parseObject(nl);
 if (missing_keys.length > 0) {
     console.log("######################################################################")

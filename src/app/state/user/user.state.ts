@@ -2,7 +2,7 @@ import { ResetStateAction } from "./actions/reset-state.action";
 import { Injectable } from "@angular/core";
 import { State, Selector, Action, StateContext } from "@ngxs/store";
 import { SetAccessTokenAction } from "./actions/set-access-token.action";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { IJwtDecoded } from "src/app/interfaces/jwt-decoded.interface";
 
 export interface IUserState {
@@ -32,7 +32,7 @@ export class UserState {
     @Action(SetAccessTokenAction)
     setAccessToken(ctx: StateContext<IUserState>, payload: SetAccessTokenAction): IUserState {
         const accessToken = payload.accessToken;
-        const jwtDecoded: IJwtDecoded = jwt_decode(accessToken);
+        const jwtDecoded: IJwtDecoded = jwtDecode(accessToken);
         return ctx.patchState({
             accessToken,
             jwtDecoded

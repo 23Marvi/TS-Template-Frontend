@@ -23,7 +23,6 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "allowedCommonJsDependencies": [
-                            "web3",
                             "hash.js",
                             "lottie-web"
 						],
